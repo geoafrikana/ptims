@@ -1,0 +1,18 @@
+/* Nav Bar end */
+
+.container{
+display: flex;
+align-items: center;
+justify-content: center;
+height: 90vh;
+text-align: center;
+}
+
+.row h1 {
+    font-size: 5rem
+}
+
+.row p{
+    font-size: 2rem
+}
+

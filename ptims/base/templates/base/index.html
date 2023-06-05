@@ -1,0 +1,22 @@
+{% extends "base/master.html" %}
+
+{% load static %}
+
+
+{% block styles %}
+
+      <link rel="stylesheet" href="{% static 'base/css/index.css' %}">
+      {% endblock %}
+
+
+      <title>{% block title %}PTIMS Home {% endblock %}</title>
+
+      {% block content %}
+      <div class="container">
+        <div class="row">
+          <h1>PTIM-GIS</h1>
+          <p>Property Tax Management Management System</p>
+        </div>
+
+      </div>
+      {% endblock %}

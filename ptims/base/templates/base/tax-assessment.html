@@ -1,0 +1,57 @@
+{% extends "base/master.html" %}
+
+{% load static %}
+
+      {% block styles %}<link rel="stylesheet" href="{% static 'base/css/tax-assessment.css' %}"> {% endblock %}
+      
+      {% block title %} Tax Assessment {% endblock %}
+
+   {% block content %}
+      <nav id='nav_' class="navbar"></nav>
+      <div class="login-form-bd">
+        <div class="form-wrapper">
+          <div class="form-container">
+            <h2> Account Number Search</h2>
+            <form>
+              <div class="form-control">
+                <input type="text" required>
+                <label> Account Number</label>
+              </div>
+      
+              <div class="form-control">
+                <input type="text" required>
+                <label>Alternate Account Number</label>
+              </div>
+
+              <h2> Property Address Search</h2>
+              <p class="subtext"> Street address must be entered. Example: 123 Main Str</p>
+              <div class="form-control">
+                <input type="text" required>
+                <label>Address</label>
+              </div>
+
+              <div class="form-control">
+                <input type="text" required>
+                <label>City</label>
+              </div>
+              <div class="form-control">
+                <input type="text" required>
+                <label>State/Province</label>
+              </div>
+              <div class="form-control">
+                <input type="text" required>
+                <label>Zip/Postal Code</label>
+              </div>
+              <button class="login-btn">Parcel Info</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      </div>
+
+      {% endblock %}
+
+{% block scripts %}
+      <script src="{% static 'base/js/login.js' %}"></script>
+{% endblock %}

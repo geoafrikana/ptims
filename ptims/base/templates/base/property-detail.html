@@ -1,0 +1,31 @@
+{% extends 'base/master.html' %}
+
+{% load static %}
+
+      {% block styles %}<link rel="stylesheet" href="{% static 'base/css/property-detail.css' %}"> {% endblock %}
+      
+      {% block title %}Detail{% endblock %}
+
+   {% block content %}
+<div class="detail-container">
+   <div>
+    <img style="width:150px" src="{{ owner_photo }}" />
+    <p><b>Owner:</b> {{ owner }}</p>
+    <p id="ptin">{{ ptin }}</p>
+    <p><b>Tax Due:</b> &#8358 {{ tax_due }} Naira</p>
+    <p><b>Tax Paid:</b> &#8358 {{ tax_paid }} Naira</p>
+    {% if debt_status == 'owing'  %}
+    <p style="color:red"><b>Outstanding:</b> &#8358 {{ outstanding }} naira</p>
+    <button id="btn"><b>Notify!</b></button>
+    {% else %}
+    <p style="color:green"><b>Outstanding:</b> No debts </p>
+    {% endif %}
+  </div>
+</div>
+
+
+      {% endblock %}
+
+      {% block scripts %}
+      <script src="{% static 'base/js/notify.js' %}"></script>
+    {% endblock %}

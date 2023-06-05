@@ -1,0 +1,38 @@
+{% extends 'base/master.html' %}
+
+{% load static %}
+
+      {% block styles %}<link rel="stylesheet" href="{% static 'base/css/login.css' %}"> {% endblock %}
+      
+      {% block title %}Login {% endblock %}
+
+   {% block content %}
+
+      <div class="login-form-bd">
+        <div class="form-wrapper">
+          <div class="form-container">
+            <h1> Please Login</h1>
+            <form>
+              <div class="form-control">
+                <input type="text" required>
+                <label> Email/PTIN</label>
+              </div>
+      
+              <div class="form-control">
+                <input type="password" required>
+                <label> Password</label>
+              </div>
+              <button class="login-btn">Login</button>
+              <p class="text">Don't have an account? <a href="register.html"> Register</a></p>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      </div>
+
+      {% endblock %}
+
+      {% block scripts %}
+      <script src="{% static 'base/js/login.js' %}"></script>
+    {% endblock %}

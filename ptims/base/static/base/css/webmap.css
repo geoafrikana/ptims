@@ -1,0 +1,19 @@
+#map{
+    height: 90vh;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+#grid-parent {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(8);
+    grid-column-gap: 5px;
+    grid-row-gap: 1px;
+    }
+
+    #grid-parent p {
+        margin:5px
+    }

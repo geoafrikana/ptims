@@ -1,0 +1,35 @@
+{% extends "base/master.html" %}
+
+{% load static %}
+
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'base/css/webmap.css' %}">
+{% endblock %}
+
+{% block title %}Web Map{% endblock %}
+  
+
+{% block content %}
+<div id="map"></div>
+{% endblock %}
+
+
+{% block scripts %}
+    <script src="{% static 'base/js/webmap.js' %}" defer></script>
+    
+    <link rel="stylesheet" 
+    href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+     crossorigin=""/>
+     
+     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+     crossorigin=""></script>
+
+     <script src="{% static 'base/js/leafletControlSearch.js' %}"></script>
+
+     <link rel="stylesheet" 
+     href="{% static 'base/css/leaflet-search.css' %}" 
+     />
+{% endblock %}

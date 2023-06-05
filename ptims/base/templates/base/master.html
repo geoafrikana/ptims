@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'base/css/nav.css' %}">
+    {% block styles %}   {% endblock %}
+
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <nav id='nav_' class="navbar">
+
+        <div class="brand-title"><a id='home' href="{% url 'index' %}">PTIM-GIS</a></div>
+        <a href="#" class="toggle-button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
+        <div class="navbar-links">
+            <ul>
+                <li><a href="{% url 'webmap' %}">Web Map</a></li>
+                <li><a href="{% url 'tax_assessment' %}">Tax Assessment</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+{% block content %}
+{% endblock %}
+</body>
+<script src="{% static 'base/js/nav.js' %}"></script>
+{% block scripts %}
+{% endblock %}
+</html>
