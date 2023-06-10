@@ -19,13 +19,17 @@ def login(request):
 
 def notify(request, year, code):
     building = get_building_from_ptin(year, code)
+    outstanding = building['tax_due'] - building['tax_paid']
+    mail_message = f"Dear f{building['name']}, \n\n This is a subtle reminder that of {outstanding} NGN on your property with PTIN {building['ptin']}. \n\n Kindly pay soonest. \n\n Warm Regards,\nPTIMS Team."
+
     try:
-        send_mail(subject='subject',
-              message='message',
+        send_mail(subject='Property Tax Notification',
+              message= mail_message,
               from_email='tpnewnas@gmail.com',
               recipient_list=[f"{building['email']}"])
     except:
         return JsonResponse({'status': "fail"})
+    
     return JsonResponse({'status': 'success', 'building': building})
 
 def property_detail(request, year, code):
